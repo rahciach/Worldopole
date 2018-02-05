@@ -679,7 +679,7 @@ switch ($request) {
 				JOIN gym ON gym.gym_id = raid.gym_id
 				WHERE raid.end > UTC_TIMESTAMP()
 				" . ($citySplit ? $cityLimit : '') . "
-				ORDER BY raid.level DESC, raid.start".$limit;
+				ORDER BY raid.level DESC, raid.start DESC".$limit;
 		$result = $mysqli->query($req);
 		$raids = array();
 		while ($data = $result->fetch_object()) {
